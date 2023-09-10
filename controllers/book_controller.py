@@ -8,11 +8,14 @@ book_blueprint = Blueprint("books", __name__)
 def index():
     return render_template("index.jinja", title= "My Books", books=books)
 
-@book_blueprint.route('/books/<index>')
-def show(index):
-  chosen_book = books[int(index)]
-  
-  return render_template('book.html', book=chosen_book)
+@book_blueprint.route('/books/<title>', methods=["POST"])
+def show(title):
+    chosen_book = None
+    for book in books:
+        if book.title == title:
+            chosen_book = book
+    return render_template('book.html', book=chosen_book)
+
 
 @book_blueprint.route('/books', methods=['POST'])
 def add_book():

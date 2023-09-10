@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>{{ book.title }}</title>
 </head>
 <body>
-    <h1>{{ book.title }}</h1>
+    <div class="book">
+        <h1>{{ book.title }}</h1>
 
 
-    <h2>{{ book.title }}</h2>
-    <h3>{{ book.author }}</h3>
-    <h4>{{ book.genre }}</h4>
+        <h2>{{ book.title }}</h2>
+        <h3>{{ book.author }}</h3>
+        <h4>{{ book.genre }}</h4>
+    </div>
+
+<a href="http://127.0.0.1:4999/books">Back to Books</a>
 </body>
 </html>
