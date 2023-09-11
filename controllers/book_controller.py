@@ -14,7 +14,7 @@ def show(title):
     for book in books:
         if book.title == title:
             chosen_book = book
-    return render_template('book.html', book=chosen_book)
+    return render_template('book.jinja', book=chosen_book)
 
 
 @book_blueprint.route('/books', methods=['POST'])
@@ -33,3 +33,7 @@ def add_book():
 def delete(title):
     delete_book(title)
     return redirect('/books')
+
+@book_blueprint.route("/books/contact")
+def contact():
+    return render_template("contact.jinja")
